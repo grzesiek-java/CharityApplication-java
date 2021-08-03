@@ -4,11 +4,6 @@
 <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
-
-
-<%--@DateTimeFormat(pattern = "yyyy-MM-dd")--%>
-<%--private LocalDate pickUpDate;--%>
-
 <!DOCTYPE html>
 <html lang="pl">
   <head>
@@ -17,7 +12,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
 <%--    <link rel="stylesheet" href="css/style.css" />--%>
-    <link rel="stylesheet" href="<c:url value="resources/css/style.css"/>"/>
+    <link rel="stylesheet" href="<c:url value="../../resources/css/style.css"/>"/>
   </head>
   <body>
     <header class="header--form-page">
@@ -92,7 +87,7 @@
 
       <div class="form--steps-container">
         <div class="form--steps-counter">Krok <span>1</span>/4</div>
-
+<form:form method="post" model="donation" action="/form">
         <form method="post">
           <!-- STEP 1: class .active is switching steps -->
           <div data-step="1" class="active">
@@ -107,6 +102,15 @@
 <%--            <form:textarea path="pickUpComment"/>--%>
 <%--            <form:input type="date" path="pickUpDate"/>--%>
 <%--            <form:input type="time" path="pickUpTime" />--%>
+
+
+<%--            todo try this--%>
+<%--            <c:forEach var="item" items="${roleSelections}">--%>
+<%--              <span class="checkbox"><form:checkbox path="roles" value="${item}"></span>--%>
+<%--            </c:forEach>--%>
+<%--            todo or this--%>
+<%--            <form:checkboxes path="roles" element="span class='checkbox'" items="${roleSelections}" />--%>
+
 
             <c:forEach items="${categories}" var="c">
               <div class="form-group form-group--checkbox">
@@ -153,20 +157,19 @@
           <!-- STEP 4 -->
           <div data-step="3">
             <h3>Wybierz organizacje, której chcesz pomóc:</h3>
-            <c:forEach items="${institutes}" var="c">
+
+            <c:forEach items="${institutions}" var="i">
             <div class="form-group form-group--checkbox">
               <label>
-                <input type="radio" name="organization" value="old" />
+                <input type="radio" name="organization" value="${i.id}" />
                 <span class="checkbox radio"></span>
                 <span class="description">
-                  <div class="title">Fundacja “Bez domu”</div>
-                  <div class="subtitle">
-                    Cel i misja: Pomoc dla osób nie posiadających miejsca
-                    zamieszkania
-                  </div>
+                  <div class="title">${i.name}</div>
+                  <div class="subtitle">${i.description}</div>
                 </span>
               </label>
             </div>
+            </c:forEach>
 
             <div class="form-group form-group--checkbox">
               <label>
@@ -316,18 +319,18 @@
           </div>
 
           <button class="btn" type="submit">Wyślij</button>
-        </form>
+          </form:form>
       </div>
       <div class="bottom-line">
         <span class="bottom-line--copy">Copyright &copy; 2018</span>
         <div class="bottom-line--icons">
-          <a href="#" class="btn btn--small"><img src="<c:url value="resources/images/icon-facebook.svg"/>"/></a>
-          <a href="#" class="btn btn--small"><img src="<c:url value="resources/images/icon-instagram.svg"/>"/></a>
+          <a href="#" class="btn btn--small"><img src="<c:url value="../../resources/images/icon-facebook.svg"/>"/></a>
+          <a href="#" class="btn btn--small"><img src="<c:url value="../../resources/images/icon-instagram.svg"/>"/></a>
         </div>
       </div>
     </footer>
 
 <%--    <script src="js/app.js"></script>--%>
-    <script src="<c:url value="resources/js/app.js"/>"></script>
+    <script src="<c:url value="../../resources/js/app.js"/>"></script>
   </body>
 </html>

@@ -8,5 +8,6 @@
 <body>
 <h1>oops..</h1>
 <h2>something screwed up!</h2>
+<a href="/">Start Page</a>
 </body>
 </html>

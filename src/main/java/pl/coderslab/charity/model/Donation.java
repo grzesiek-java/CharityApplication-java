@@ -23,11 +23,12 @@ public class Donation {
 
     private Integer quantity;
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @OneToMany(fetch = FetchType.EAGER)
+    //@ToString.Exclude
     private List<Category> categories;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @ToString.Exclude
+    //@ToString.Exclude
     private Institution institution;
 
     private String street;

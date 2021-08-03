@@ -7,12 +7,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="<c:url value="resources/css/style.css"/>"/>
+    <link rel="stylesheet" href="<c:url value="../../resources/css/style.css"/>"/>
 </head>
 <body>
 <section class="steps">
     <div class="steps--container" style="font-size: large">
-        <form:form method="post" modelAttribute="donation">
+        <form:form method="post" model="donation">
 
             <table style="padding: 10px">
 
@@ -29,13 +29,9 @@
 
             </table>
 
-
-
-
-
         </form:form>
     </div>
 </section>
-<script src="<c:url value="resources/js/app.js"/>"></script>
+<script src="<c:url value="../../resources/js/app.js"/>"></script>
 </body>
 </html>

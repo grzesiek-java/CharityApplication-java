@@ -46,4 +46,16 @@ public class FormController {
         return "form-confirm";
     }
 
+    // todo form for donations
+    @GetMapping(value = "/form2")
+    public String formGet2(Model model) {
+        List<Institution> institutions = institutionService.showAll();
+        List<Category> categories = categoryService.showAll();
+        Donation donation = new Donation();
+        model.addAttribute("institutions", institutions);
+        model.addAttribute("categories", categories);
+        model.addAttribute("donation", donation);
+        return "form";
+    }
+
 }
