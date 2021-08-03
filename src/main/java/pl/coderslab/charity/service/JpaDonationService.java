@@ -1,5 +1,6 @@
 package pl.coderslab.charity.service;
 
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 import pl.coderslab.charity.repo.DonationRepo;
 
@@ -17,4 +18,10 @@ public class JpaDonationService implements DonationService{
     public long showNumber() {
         return donationRepo.count();
     }
+
+    @Override
+    public Long showNumberOfBags(){
+        return donationRepo.numberOfBags();
+    };
+
 }

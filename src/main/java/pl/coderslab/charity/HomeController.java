@@ -25,8 +25,10 @@ public class HomeController {
     public String homeAction(Model model){
         List<Institution> institutions = institutionService.showAll();
         Long numberOfDonations = donationService.showNumber();
+        Long numberOfBags = donationService.showNumberOfBags();
         model.addAttribute("institutions",institutions);
         model.addAttribute("numberOfDonations",numberOfDonations);
+        model.addAttribute("numberOfBags",numberOfBags);
         return "start";
     }
 
