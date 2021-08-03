@@ -3,6 +3,8 @@
 
 <jsp:include page="header.jsp"/>
 
+
+
 <section class="stats">
     <div class="container container--85">
         <div class="stats--item">
