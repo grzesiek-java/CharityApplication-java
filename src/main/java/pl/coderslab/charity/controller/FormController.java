@@ -33,7 +33,7 @@ public class FormController {
         model.addAttribute("institutions",institutions);
         model.addAttribute("categories",categories);
         model.addAttribute("donation", donation);
-        return "formTest";
+        return "form";
     }
     @PostMapping(value = "/form")
     public String formPost(Donation donation) {
@@ -55,7 +55,7 @@ public class FormController {
         model.addAttribute("institutions", institutions);
         model.addAttribute("categories", categories);
         model.addAttribute("donation", donation);
-        return "form";
+        return "foo";
     }
 
 }

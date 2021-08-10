@@ -23,7 +23,7 @@ public class Donation {
 
     private Integer quantity;
 
-    @OneToMany(fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.EAGER)
     //@ToString.Exclude
     private List<Category> categories;
 
