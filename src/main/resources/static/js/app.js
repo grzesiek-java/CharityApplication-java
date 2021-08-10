@@ -164,6 +164,28 @@ document.addEventListener("DOMContentLoaded", function() {
       this.$step.parentElement.hidden = this.currentStep >= 5;
 
       // TODO: get data from inputs and show them in summary
+
+      let quantity = $("#quantity").val();
+      $("#quantityView").text(quantity);
+
+      let city = $("#city").val();
+      $("#cityView").text(city);
+
+      let zip = $("#zipCode").val();
+      $("#zipCodeView").text(zip);
+
+      let street = $("#street").val();
+      $("#streetView").text(street);
+
+      let date = $("#date").val();
+      $("#dateView").text(date);
+
+      let time = $("#time").val();
+      $("#timeView").text(time);
+
+      let comment = $("#comment").val();
+      $("#commentView").text(comment);
+
     }
 
   }

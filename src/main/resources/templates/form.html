@@ -96,7 +96,7 @@
 
             <div class="form-group form-group--inline">
               <label>
-                Kod pocztowy <input th:field="*{zipCode}" type="text" name="postcode" id="zipcode"/>
+                Kod pocztowy <input th:field="*{zipCode}" type="text" name="postcode" id="zipCode"/>
               </label>
             </div>
 
@@ -140,7 +140,7 @@
               <ul>
                 <li>
                   <span class="icon icon-bag"></span>
-                  <span class="summary--text"><span id="quantity2"></span> worki ubrań w dobrym stanie dla dzieci</span>
+                  <span class="summary--text"><span id="quantityView"></span> worki ubrań w dobrym stanie dla dzieci</span>
                 </li>
                 <li>
                   <span class="icon icon-hand"></span>
@@ -153,9 +153,9 @@
               <div class="form-section--column">
                 <h4>Adres odbioru:</h4>
                 <ul>
-                  <li th:text="${donation.id}"></li>
-                  <li th:text="${donation.id}"></li>
-                  <li th:text="${donation.id}"></li>
+                  <li><span id="cityView"></span></li>
+                  <li><span id="zipCodeView"></span></li>
+                  <li><span id="streetView"></span></li>
                   <li>123 456 789</li>
                 </ul>
               </div>
@@ -163,9 +163,9 @@
               <div class="form-section--column">
                 <h4>Termin odbioru:</h4>
                 <ul>
-                  <li th:text="${donation.id}"></li>
-                  <li th:text="${donation.id}"></li>
-                  <li th:text="${donation.id}"></li>
+                  <li><span id="dateView"></span></li>
+                  <li><span id="timeView"></span></li>
+                  <li><span id="commentView"></span></li>
                 </ul>
               </div>
             </div>
