@@ -33,12 +33,17 @@ public class HomeController {
     }
 
     @GetMapping("/test")
-    public String testAction(){
+    public String testGet(){
         return "test";
     }
 
+    @GetMapping("/login")
+    public String loginGet() {
+        return "login";
+    }
+
     @GetMapping("/error")
-    public String error(){
+    public String errorGet(){
         return "error";
     }
 

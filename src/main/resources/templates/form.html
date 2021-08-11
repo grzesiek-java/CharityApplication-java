@@ -37,7 +37,7 @@
             <div class="form-group form-group--checkbox" th:each="category : ${categories}" >
               <label>
                 <input type="checkbox" name="category" id="categories" th:field="*{categories}" th:value="${category.id}" />
-                <span class="checkbox" ></span>
+                <span type="hidden" class="checkbox"></span>
                 <span th:text="${category.name}" class="description"></span>
               </label>
             </div>
@@ -65,11 +65,11 @@
           <h3>Wybierz organizacje, której chcesz pomóc:</h3>
             <div  class="form-group form-group--checkbox" th:each="institution : ${institutions}">
               <label>
-                <input type="radio" id="institutions"  th:field="*{institution}" th:value="${institution.id}"/>
+                <input type="radio" id="institutions" th:field="*{institution}" th:value="${institution.id}"/>
                 <span class="checkbox radio"></span>
                 <span class="description">
-                  <div th:text="${institution.name}" class="title"></div>
-                  <div th:text="${institution.description}" class="subtitle"></div>
+                  <div class="title" th:text="${institution.name}"></div>
+                  <div class="subtitle"th:text="${institution.description}" ></div>
                 </span>
               </label>
             </div>
@@ -144,7 +144,8 @@
                 </li>
                 <li>
                   <span class="icon icon-hand"></span>
-                  <span class="summary--text">Dla <span id="institutionView"></span></span>
+                  <span class="summary--text"> Dla <span id="institutionView"></span></span>
+                  <span class="summary--text"> Dla <span th:text="${institutions[0].name}"></span></span>
                 </li>
               </ul>
             </div>

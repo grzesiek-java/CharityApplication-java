@@ -189,10 +189,12 @@ document.addEventListener("DOMContentLoaded", function() {
       let comment = $("#comment").val();
       $("#commentView").text(comment);
 
-      let institution = $("#institutions[name='institution']:checked").val();
+      // let institution = $("#institutions:checked").next(".description").children(".title").val();
+      let institution = $("#institutions:checked").val();
+      // console.log(institution)
       $("#institutionView").text(institution);
 
-      // let categories =  $("#categories[name='category']:checked").val();
+      // let categories =  $("#categories[name='category']:checked").each();
       // $("#categoriesView").text(categories)
     }
 
