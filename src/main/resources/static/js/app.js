@@ -177,6 +177,9 @@ document.addEventListener("DOMContentLoaded", function() {
       let street = $("#street").val();
       $("#streetView").text(street);
 
+      let phone = $("#phone").val();
+      $("#phoneView").text(phone);
+
       let date = $("#date").val();
       $("#dateView").text(date);
 
@@ -186,6 +189,11 @@ document.addEventListener("DOMContentLoaded", function() {
       let comment = $("#comment").val();
       $("#commentView").text(comment);
 
+      let institution = $("#institutions[name='institution']:checked").val();
+      $("#institutionView").text(institution);
+
+      // let categories =  $("#categories[name='category']:checked").val();
+      // $("#categoriesView").text(categories)
     }
 
   }

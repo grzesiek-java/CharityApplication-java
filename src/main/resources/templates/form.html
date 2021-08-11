@@ -65,7 +65,7 @@
           <h3>Wybierz organizacje, której chcesz pomóc:</h3>
             <div  class="form-group form-group--checkbox" th:each="institution : ${institutions}">
               <label>
-                <input type="radio" name="organization" id="institution" th:field="*{institution}" th:value="${institution.id}"/>
+                <input type="radio" id="institutions"  th:field="*{institution}" th:value="${institution.id}"/>
                 <span class="checkbox radio"></span>
                 <span class="description">
                   <div th:text="${institution.name}" class="title"></div>
@@ -102,7 +102,7 @@
 
             <div class="form-group form-group--inline">
               <label>
-                Numer telefonu <input type="phone" name="phone" />
+                Numer telefonu <input type="phone" name="phone" id="phone"/>
               </label>
             </div>
           </div>
@@ -140,11 +140,11 @@
               <ul>
                 <li>
                   <span class="icon icon-bag"></span>
-                  <span class="summary--text"><span id="quantityView"></span> worki ubrań w dobrym stanie dla dzieci</span>
+                  <span class="summary--text"><span id="quantityView"></span> worki ***kategorie***</span>
                 </li>
                 <li>
                   <span class="icon icon-hand"></span>
-                  <span class="summary--text" th:text="'Dla ' + ${donation.id}"></span>
+                  <span class="summary--text">Dla <span id="institutionView"></span></span>
                 </li>
               </ul>
             </div>
@@ -156,7 +156,7 @@
                   <li><span id="cityView"></span></li>
                   <li><span id="zipCodeView"></span></li>
                   <li><span id="streetView"></span></li>
-                  <li>123 456 789</li>
+                  <li><span id="phoneView"></span></li>
                 </ul>
               </div>
 
