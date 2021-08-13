@@ -34,13 +34,21 @@
         <!-- STEP 1: class .active is switching steps -->
         <div data-step="1" class="active">
           <h3>Zaznacz co chcesz oddać:</h3>
-            <div class="form-group form-group--checkbox" th:each="category : ${categories}" >
-              <label>
-                <input type="checkbox" name="category" id="categories" th:field="*{categories}" th:value="${category.id}" />
-                <span type="hidden" class="checkbox"></span>
-                <span th:text="${category.name}" class="description"></span>
-              </label>
-            </div>
+          <div style="font-size: large" th:each="category : ${categories}" >
+            <label>
+              <input type="checkbox" id="categories" th:value="${category.id}" th:field="*{categories}" />
+              <span type="hidden" class="checkbox"></span>
+              <span id="categoryName" class="description" th:text="' ' + ${category.name}" ></span>
+              <p></p>
+            </label>
+          </div>
+<!--            <div class="form-group form-group&#45;&#45;checkbox" th:each="category : ${categories}"  >-->
+<!--              <label>-->
+<!--                <input type="checkbox" id="categories" th:value="${category.id}" th:field="*{categories}" />-->
+<!--                <span type="hidden" class="checkbox"></span>-->
+<!--                <span th:text="${category.name}" class="description"></span>-->
+<!--              </label>-->
+<!--            </div>-->
           <div class="form-group form-group--buttons">
             <button type="button" class="btn next-step">Dalej</button>
           </div>
@@ -140,12 +148,14 @@
               <ul>
                 <li>
                   <span class="icon icon-bag"></span>
-                  <span class="summary--text"><span id="quantityView"></span> worki ***kategorie***</span>
+                  <span class="summary--text">
+                    <span id="quantityView"></span>
+                    worki (
+                    <span id="categoriesView"></span> )</span>
                 </li>
                 <li>
                   <span class="icon icon-hand"></span>
-                  <span class="summary--text"> Dla <span id="institutionView"></span></span>
-                  <span class="summary--text"> Dla <span th:text="${institutions[0].name}"></span></span>
+                  <span class="summary--text">Dla <span id="institutionView"></span></span>
                 </li>
               </ul>
             </div>

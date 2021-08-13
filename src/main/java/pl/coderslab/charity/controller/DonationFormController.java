@@ -13,13 +13,13 @@ import pl.coderslab.charity.service.InstitutionService;
 import java.util.List;
 
 @Controller
-public class FormController {
+public class DonationFormController {
 
     private final InstitutionService institutionService;
     private final DonationService donationService;
     private final CategoryService categoryService;
 
-    public FormController(InstitutionService institutionService, DonationService donationService, CategoryService categoryService) {
+    public DonationFormController(InstitutionService institutionService, DonationService donationService, CategoryService categoryService) {
         this.institutionService = institutionService;
         this.donationService = donationService;
         this.categoryService = categoryService;
