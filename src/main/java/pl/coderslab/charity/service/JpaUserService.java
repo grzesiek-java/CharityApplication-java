@@ -20,7 +20,7 @@ public class JpaUserService implements UserService {
     @Override
     public void addUser(User user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
-        user.setRole("ROLE_ADMIN");
+        user.setRole("ROLE_USER");
         userRepo.save(user);
     }
 }

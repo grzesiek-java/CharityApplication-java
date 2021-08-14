@@ -521,6 +521,13 @@ form {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
+.form-categories{
+  font-family: 'Merriweather', serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
 
 /* line 5, scss/modules/_forms.scss */
 form .form-group {

@@ -189,15 +189,17 @@ document.addEventListener("DOMContentLoaded", function() {
       let comment = $("#comment").val();
       $("#commentView").text(comment);
 
-      // let institution = $("#institutions:checked").next(".description").children(".title").text();
-      let institution = $("#institutions:checked").val();
+      let institution = $("#institutions:checked").next().next().children().get(0).innerText; //next(".description").children(".title").get();
+      // let institution = $("#institutions:checked").val();
       console.log(institution)
       $("#institutionView").text(institution);
 
       let categories = [];
       $("#categories:checked").each(function () {
-        // categories.push($(this).next("#categoryName").text());
-        categories.push($(this).val());
+        categories.push(
+            $(this).parent().children().get(3).innerText
+        );
+        // categories.push($(this).val());
       });
       console.log(categories)
       $("#categoriesView").text(categories.join(", "));

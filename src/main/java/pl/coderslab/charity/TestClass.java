@@ -14,6 +14,7 @@ public class TestClass {
     public TestClass(UserRepo userRepo, PasswordEncoder passwordEncoder) {
         this.userRepo = userRepo;
 
+
 //        User user = new User();
 //        user.setUsername("zzz");
 //        user.setPassword(passwordEncoder.encode("zzz"));

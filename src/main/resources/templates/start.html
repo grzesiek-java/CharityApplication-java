@@ -50,7 +50,7 @@
         </div>
     </div>
 
-    <a href="#" class="btn btn--large">Załóż konto</a>
+    <a href="/register" class="btn btn--large">Załóż konto</a>
 </section>
 
 <section class="about-us" id="about-us">
@@ -75,35 +75,16 @@
             Możesz sprawdzić czym się zajmują.</p>
 
         <ul class="help--slides-items" th:each="institution, step : ${institutions}" >
-           <li th:if="${step.index % 2 == 0}">
+           <li>
                <div class="col">
-                   <div class="title" th:text="${step.index}"></div>
-                   <div class="title" th:text="${institution.name}"></div>
-                   <div class="subtitle" th:text="${institution.description}"></div>
-               </div>
-               <div class="col">
-                   <div class="title" th:text="${step.index}"></div>
                    <div class="title" th:text="${institution.name}"></div>
                    <div class="subtitle" th:text="${institution.description}"></div>
                </div>
            </li>
         </ul>
-<!--        <ul class="help&#45;&#45;slides-items">-->
-<!--            <c:forEach items="${institutions}" var="institution" varStatus="counter" begin="0" step="2">-->
-<!--                <li>-->
-<!--                    <c:forEach items="${institutions}" var="institution" begin="${counter.index}" end="${counter.index+1}">-->
-<!--                        <div class="col">-->
-<!--                            <div class="title">${institution.name}</div>-->
-<!--                            <div class="subtitle">${institution.description}</div>-->
-<!--                        </div>-->
-<!--                    </c:forEach>-->
-<!--                </li>-->
-<!--            </c:forEach>-->
-<!--        </ul>-->
     </div>
 
 </section>
-
 
 <div lang="en" th:replace="footer :: footer"></div>
 </body>
