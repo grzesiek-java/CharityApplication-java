@@ -10,7 +10,7 @@ public class MainPageController {
 
     @GetMapping("/main")
     public String mainGet(Principal principal, Model model){
-        model.addAttribute("name", principal.getName());
+        model.addAttribute("user", principal.getName());
         return "main";
     }
 }

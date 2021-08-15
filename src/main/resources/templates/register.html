@@ -23,7 +23,13 @@
       <h2>Załóż konto</h2>
       <form th:action="@{/register}" th:object="${user}" method="post">
         <div class="form-group">
-          <input type="email" th:field="*{username} "name="email" placeholder="Email" required/>
+          <input type="email" th:field="*{username} "name="username" placeholder="Email" required/>
+        </div>
+        <div class="form-group">
+          <input type="text" th:field="*{firstName} "name="firstName" placeholder="Imię" required/>
+        </div>
+        <div class="form-group">
+          <input type="text" th:field="*{lastName} "name="lastName" placeholder="Nazwisko" required/>
         </div>
         <div class="form-group">
           <input type="password" th:field="*{password}" name="password" placeholder="Hasło" required/>

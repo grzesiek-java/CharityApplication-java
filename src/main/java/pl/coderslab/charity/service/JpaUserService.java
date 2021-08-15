@@ -23,4 +23,9 @@ public class JpaUserService implements UserService {
         user.setRole("ROLE_USER");
         userRepo.save(user);
     }
+
+    @Override
+    public User getUser(String name) {
+        return userRepo.findByUsername(name).get();
+    }
 }
