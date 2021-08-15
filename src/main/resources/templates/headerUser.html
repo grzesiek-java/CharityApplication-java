@@ -7,12 +7,10 @@
           <li class="logged-user">
             użytkownik:
             <span th:text="${name}"></span>
-<!--            <span th:text ="${#authentication.getPrincipal().getUser().getusername()}"></span>-->
-
             <ul class="dropdown">
               <li><a href="#">Profil</a></li>
               <li><a href="#">Moje zbiórki</a></li>
-              <li><a href="#">Wyloguj</a></li>
+              <li><a href="/logout">Wyloguj</a></li>
             </ul>
           </li>
         </ul>
