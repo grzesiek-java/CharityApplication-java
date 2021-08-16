@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head lang="en" th:replace="head :: head"></head>
+<body>
+<header lang="en" th:replace="headerAdmin :: header"></header>
+
+<section class="login-page">
+    <h2>Lista fundacji</h2>
+    <div class="slogan container container--70">
+
+
+        <table class="tab1">
+            <thead>
+            <th>Nazwa fundacji</th>
+            <th>Cel i misja fundacji</th>
+<!--            <th width="160px"></th>-->
+
+            </thead>
+            <tbody>
+                <tr th:each="i : ${institutions}">
+                    <td th:text="${i.name}"></td>
+                    <td th:text="${i.description}"></td>
+<!--                    <td>-->
+<!--                        <a class="btn btn-warning btn-sm" href="<c:out value="/teacher/editSection/${section.id}"/>">EDYTUJ</a>&nbsp;&nbsp;-->
+<!--                        <a class="btn btn-danger btn-sm" href="<c:out value="/teacher/deleteSection/${section.id}"/>">USUŃ</a>-->
+<!--                    </td>-->
+                </tr>
+            </c:forEach>
+            </tbody>
+        </table>
+
+    </div>
+</section>
+
+<div lang="en" th:replace="footerMin :: footer"></div>
+</body>
+</html>

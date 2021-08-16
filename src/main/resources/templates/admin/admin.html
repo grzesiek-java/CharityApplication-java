@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head lang="en" th:replace="head :: head"></head>
+<body>
+<header lang="en" th:replace="headerAdmin :: header"></header>
+
+<div class="slogan container container--90">
+    <div class="login-page">
+
+        <h2>Witaj <span th:text="${user.firstName}"></span> w panelu administracyjnym</h2>
+
+    </div>
+</div>
+
+<div lang="en" th:replace="footerMin :: footer"></div>
+</body>
+</html>

@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 import pl.coderslab.charity.model.User;
 import pl.coderslab.charity.repo.UserRepo;
 
+import java.util.List;
 
 
 @Service
@@ -27,5 +28,10 @@ public class JpaUserService implements UserService {
     @Override
     public User getUser(String name) {
         return userRepo.findByUsername(name).get();
+    }
+
+    @Override
+    public List<User> showAll() {
+        return userRepo.findAll();
     }
 }
