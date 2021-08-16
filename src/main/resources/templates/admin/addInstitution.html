@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head lang="en" th:replace="head :: head"></head>
+<body>
+<header lang="en" th:replace="headerAdmin :: header"></header>
+
+<section class="login-page">
+  <h2>Dodaj fundację</h2>
+
+  <form th:action="@{/addInstitution}" th:object="${institution}" method="post">
+    <div class="form-group" >
+      <input  type="text" th:field="*{name}" placeholder="Nazwa fundacji" required/>
+    </div>
+    <div class="form-group">
+      <input type="text" th:field="*{description}" placeholder="Cel i misja fundacji"  required/>
+      <button class="btn btn--small btn--without-border reset-password active" type="submit">Zapisz</button>
+    </div>
+  </form>
+</section>
+
+<div lang="en" th:replace="footerMin :: footer"></div>
+</body>
+</html>

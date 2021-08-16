@@ -13,17 +13,11 @@
       <thead>
       <th>Numer kategorii</th>
       <th>Nazwa kategorii</th>
-      <!--            <th width="160px"></th>-->
-
       </thead>
       <tbody>
       <tr th:each="c : ${categories}">
         <td th:text="${c.id}"></td>
         <td th:text="${c.name}"></td>
-        <!--                    <td>-->
-        <!--                        <a class="btn btn-warning btn-sm" href="<c:out value="/teacher/editSection/${section.id}"/>">EDYTUJ</a>&nbsp;&nbsp;-->
-        <!--                        <a class="btn btn-danger btn-sm" href="<c:out value="/teacher/deleteSection/${section.id}"/>">USUŃ</a>-->
-        <!--                    </td>-->
       </tr>
       </c:forEach>
       </tbody>

@@ -14,18 +14,12 @@
       <th>Imię</th>
       <th>Nazwisko</th>
       <th>Email</th>
-      <!--            <th width="160px"></th>-->
-
       </thead>
       <tbody>
       <tr th:each="u : ${users}">
         <td th:text="${u.firstName}"></td>
         <td th:text="${u.lastName}"></td>
         <td th:text="${u.username}"></td>
-        <!--                    <td>-->
-        <!--                        <a class="btn btn-warning btn-sm" href="<c:out value="/teacher/editSection/${section.id}"/>">EDYTUJ</a>&nbsp;&nbsp;-->
-        <!--                        <a class="btn btn-danger btn-sm" href="<c:out value="/teacher/deleteSection/${section.id}"/>">USUŃ</a>-->
-        <!--                    </td>-->
       </tr>
       </c:forEach>
       </tbody>

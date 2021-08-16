@@ -19,4 +19,9 @@ public class JpaInstitutionService implements InstitutionService{
     public List<Institution> showAll() {
         return institutionRepo.findAll();
     }
+
+    @Override
+    public void addInstitution(Institution institution) {
+        institutionRepo.save(institution);
+    }
 }

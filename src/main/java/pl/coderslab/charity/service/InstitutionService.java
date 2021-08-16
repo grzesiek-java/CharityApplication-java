@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface InstitutionService {
     List<Institution> showAll();
+
+    void addInstitution(Institution institution);
 }

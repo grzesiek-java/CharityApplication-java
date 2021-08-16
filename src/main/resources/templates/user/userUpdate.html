@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head lang="en" th:replace="head :: head"></head>
+<body>
+<header lang="en" th:replace="headerUser :: header"></header>
+
+<section class="login-page">
+    <h2>Zmiana danych użytkownika</h2>
+    <form th:action="@{/userUpdate}" th:object="${user}" method="post">
+        <div class="form-group">
+            <input type="email" th:field="*{username}" required/>
+        </div>
+        <div class="form-group">
+            <input type="text" th:field="*{firstName}" required/>
+        </div>
+        <div class="form-group">
+            <input type="text" th:field="*{lastName}" required/>
+        </div>
+
+        <div class="form-group form-group--buttons">
+            <a href="/main" class="btn btn--without-border">Powrót</a>
+            <button class="btn" type="submit">Zmień</button>
+        </div>
+    </form>
+</section>
+
+<div lang="en" th:replace="footerMin :: footer"></div>
+</body>
+</html>

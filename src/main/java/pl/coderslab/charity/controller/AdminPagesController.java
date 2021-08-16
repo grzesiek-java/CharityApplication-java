@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import pl.coderslab.charity.model.Category;
 import pl.coderslab.charity.model.Institution;
 import pl.coderslab.charity.model.User;
@@ -38,6 +39,20 @@ public class AdminPagesController {
         model.addAttribute("user",userService.getUser(principal.getName()));
         model.addAttribute("institutions",institutionList);
         return "admin/institutions";
+    }
+
+    @GetMapping(value = "addInstitution")
+    public String addInstitutionGet(Model model,Principal principal){
+        model.addAttribute("user",userService.getUser(principal.getName()));
+        Institution institution = new Institution();
+        model.addAttribute("institution",institution);
+        return "admin/addInstitution";
+    }
+    @PostMapping(value = "addInstitution")
+    public String addInstitutionPost(Institution institution){
+        System.out.println(institution);
+        institutionService.addInstitution(institution);
+        return  "redirect:/institutions";
     }
 
     @GetMapping(value = "/categories")

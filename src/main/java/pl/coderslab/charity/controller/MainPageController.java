@@ -3,6 +3,8 @@ package pl.coderslab.charity.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import pl.coderslab.charity.model.User;
 import pl.coderslab.charity.service.CategoryService;
 import pl.coderslab.charity.service.DonationService;
 import pl.coderslab.charity.service.InstitutionService;
@@ -30,4 +32,14 @@ public class MainPageController {
         model.addAttribute("user",userService.getUser(principal.getName()));
         return "main";
     }
+    @GetMapping("/userUpdate")
+    public String userUpdateGet(Principal principal, Model model){
+        model.addAttribute("user",userService.getUser(principal.getName()));
+        return "user/userUpdate";
+    }
+    @PostMapping("/userUpdate")
+    public String userUpdatePost(User user){
+        return "redirect:/main";
+    }
+
 }
